@@ -22,7 +22,15 @@
   <!-- Tailwind css -->
   <link rel="stylesheet" href="./assets/css/styles.css" />
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-76Q2Z1Y577"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
+    gtag('config', 'G-76Q2Z1Y577');
+  </script>
   <script>
     // On page load or when changing themes, best to add inline in `head` to avoid FOUC
     if (localStorage.getItem("theme-color") === "dark" || (!("theme-color" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
@@ -34,6 +42,7 @@
       document.getElementById("light__to--dark")?.classList.remove("dark--version");
     } 
   </script>
+
 </head>
 
 <body class="font-rubik dark:bg-dark_primary_bg">
@@ -98,7 +107,7 @@
                   <a href="#portfolio"
                     class="text-[17px] xl:text-[19px] text-primary dark:text-white font-medium hover:text-accent1 dark:hover:text-accent1 transition duration-300 ltr:ml-[26px] ltr:xl:ml-[44px] rtl:mr-[26px] rtl:xl:mr-[44px] relative after:absolute after:content-[''] after:h-[2px] after:w-0 after:bottom-[3px] ltr:after:left-0 rtl:after:right-0 after:transition-[.5s] after:bg-accent1 py-[8px] hover:after:w-full">Portfolio</a>
                 </li>
-                
+
               </ul>
             </nav>
           </div>
@@ -132,11 +141,11 @@
               </li>
               <li class="offcanvas__menu_li"><a class="offcanvas__menu_item dark:text-white" href="#about">About</a>
               </li>
-              <li class="offcanvas__menu_li"><a class="offcanvas__menu_item dark:text-white"
-                  href="#skills">Skills</a></li>
+              <li class="offcanvas__menu_li"><a class="offcanvas__menu_item dark:text-white" href="#skills">Skills</a>
+              </li>
               <li class="offcanvas__menu_li"><a class="offcanvas__menu_item dark:text-white"
                   href="#portfolio">Portfolio</a></li>
-              
+
             </ul>
           </nav>
 
@@ -274,7 +283,13 @@
             <div class="overflow-hidden px-[30px] xl:px-[40px] lg:pt-[50px] md:pt-[40px] pb-[40px] ">
               <span
                 class="bg-[#E6BC13] text-white w-[70px] h-[70px] lg:w-[93px] lg:h-[93px] flex items-center justify-center rounded-full service-shape before:bg-[#E6BC13] before:opacity-[0.22]">
-                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                  <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                  <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                  <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                </svg>
               </span>
               <h3
                 class="text-primary dark:text-white text-[20px] xl:text-[25px] font-bold font-heebo mt-[20px] mb-[15px]">
@@ -410,7 +425,13 @@
               <span
                 class="bg-[#E6BC13] text-white w-[70px] h-[70px] lg:w-[93px] lg:h-[93px] flex items-center justify-center rounded-full service-shape before:bg-[#E6BC13] before:opacity-[0.22]">
 
-                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                  <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                  <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                  <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                </svg>
               </span>
               <h3
                 class="text-primary dark:text-white text-[20px] xl:text-[25px] font-bold font-heebo mt-[20px] mb-[15px]">
@@ -455,7 +476,7 @@
               <h3
                 class="text-primary dark:text-white text-[20px] xl:text-[25px] font-bold font-heebo mt-[20px] mb-[15px]">
                 Google Anaylitics</h3>
-              
+
               <div>
                 <p href="#"
                   class="link-button text-[#ED38D1] before:bg-[#ED38D1] mt-[15px] hover:text-[#333] dark:hover:text-white">
@@ -466,7 +487,7 @@
                   class="link-button text-[#ED38D1] before:bg-[#ED38D1] mt-[15px] hover:text-[#333] dark:hover:text-white">
                   Tracking Conversions</p>
               </div>
-              
+
 
             </div>
           </div>
@@ -494,19 +515,23 @@
             </div>
             <div class="mt-[30px]">
               <h3 class="text-accent1 text-[20px] lg:text-[24px] font-medium ">Allow me to introduce myself:</h3>
-              
+
               <ul class="flex justify-between flex-wrap mt-[18px]">
                 <li
                   class="text-paragraph dark:text-slate-200 w-full xs:max-w-[100%]  max-w-[100%] ltr:pl-[18px] rtl:pr-[18px] my-[10px] relative before:absolute before:content-[''] before:bg-accent1 before:w-[6px] before:h-[6px] ltr:before:left-0 rtl:before:right-0 before:top-[8px] before:rounded-full after:absolute after::content-[''] after:w-4 after:h-4 after:border-2 after:border-accent1 ltr:after:left-[-5px] rtl:after:right-[-5px] after:top-[3px] after:border-solid after:rounded-full text-[17px]">
-                  Hi, my name is Derrion Hall. I'm an Email Specialist with the ability to take design mock-ups and turn them into HTML email documents. I can use email marketing campaign platforms to create tags, sequences, and automations to reach subscribers.</li>
+                  Hi, my name is Derrion Hall. I'm an Email Specialist with the ability to take design mock-ups and turn
+                  them into HTML email documents. I can use email marketing campaign platforms to create tags,
+                  sequences, and automations to reach subscribers.</li>
 
                 <li
                   class="text-paragraph dark:text-slate-200 w-full xs:max-w-[100%]  max-w-[100%] ltr:pl-[18px] rtl:pr-[18px] my-[10px] relative before:absolute before:content-[''] before:bg-accent1 before:w-[6px] before:h-[6px] ltr:before:left-0 rtl:before:right-0 before:top-[8px] before:rounded-full after:absolute after::content-[''] after:w-4 after:h-4 after:border-2 after:border-accent1 ltr:after:left-[-5px] rtl:after:right-[-5px] after:top-[3px] after:border-solid after:rounded-full text-[17px]">
-                  On a personal note, I enjoy fitness and reading. Always trying to find ways to be the best version of myself.</li>
+                  On a personal note, I enjoy fitness and reading. Always trying to find ways to be the best version of
+                  myself.</li>
 
                 <li
                   class="text-paragraph dark:text-slate-200 w-full xs:max-w-[100%]  max-w-[100%] ltr:pl-[18px] rtl:pr-[18px] my-[10px] relative before:absolute before:content-[''] before:bg-accent1 before:w-[6px] before:h-[6px] ltr:before:left-0 rtl:before:right-0 before:top-[8px] before:rounded-full after:absolute after::content-[''] after:w-4 after:h-4 after:border-2 after:border-accent1 ltr:after:left-[-5px] rtl:after:right-[-5px] after:top-[3px] after:border-solid after:rounded-full text-[17px]">
-                  I look forward to building amazing relationships, bringing value, and giving my best each day. Lets connect and turn our dreams into reality!</li>
+                  I look forward to building amazing relationships, bringing value, and giving my best each day. Lets
+                  connect and turn our dreams into reality!</li>
 
 
               </ul>
@@ -525,12 +550,12 @@
     </section>
     <!-- About me section end -->
 
-    
 
 
-    
 
-    
+
+
+
 
 
     <!-- Portfolio section start -->
@@ -547,7 +572,9 @@
             </h2>
           </div>
           <div class="md:grow">
-            <p class="text-[#636363] dark:text-slate-200 text-[17px] leading-[28px] lg:max-w-[472px] w-full">These projects are to show my ability to utilize HTML, CSS, and content management systems to bring beautiful designs to life.</p>
+            <p class="text-[#636363] dark:text-slate-200 text-[17px] leading-[28px] lg:max-w-[472px] w-full">These
+              projects are to show my ability to utilize HTML, CSS, and content management systems to bring beautiful
+              designs to life.</p>
           </div>
         </div>
 
@@ -566,14 +593,14 @@
             <button
               class="button text-primary dark:text-white text-[18px] capitalize font-medium hover:text-accent1 dark:hover:text-accent1 transition duration-300"
               data-filter=".cms">CMS</button>
-            
+
           </div>
           <div class="portfolio__grid flex mt-[50px] mx-[-15px]">
             <!-- single portfolio start -->
             <div class="element-item mb-[30px] w-[50%] lg:w-[33.33%]  px-[15px] emails portfolio__parent"
               data-category="emails">
               <div class="relative overflow-hidden">
-                <a href="https://my-amazon-email.netlify.app/" target="_blank" >
+                <a href="https://my-amazon-email.netlify.app/" target="_blank">
                   <span
                     class="absolute w-full h-full bg-accent1 left-0 top-0 opacity-0 transition duration-300 portfolio__overlay z-10">
                     <div class="flex items-center justify-end flex-col text-center h-full text-white p-[20px]">
@@ -591,14 +618,15 @@
                         class="portfolio--title text-[18px] lg:text-[24px] font-heebo transition-all duration-300 translate-y-3">
                         Transactional Email</h3>
                       <span
-                        class="portfolio--sub-title text-[17px] 2xs:hidden transition-all duration-500 translate-y-3">Amazon Replica Email</span>
+                        class="portfolio--sub-title text-[17px] 2xs:hidden transition-all duration-500 translate-y-3">Amazon
+                        Replica Email</span>
                     </div>
                   </span>
                   <div class="w-full portfolio__image--card">
                     <img class="w-full transition duration-300" src="./assets/images/np-amazon.png" alt="">
                   </div>
                 </a>
-                
+
               </div>
             </div>
             <!-- single portfolio end -->
@@ -625,7 +653,8 @@
                         class="portfolio--title text-[18px] lg:text-[24px] font-heebo transition-all duration-300 translate-y-3">
                         Newsletter Email</h3>
                       <span
-                        class="portfolio--sub-title text-[17px] 2xs:hidden transition-all duration-500 translate-y-3">Zoom Replica Email</span>
+                        class="portfolio--sub-title text-[17px] 2xs:hidden transition-all duration-500 translate-y-3">Zoom
+                        Replica Email</span>
                     </div>
                   </span>
                   <div class="w-full portfolio__image--card">
@@ -633,7 +662,7 @@
                   </div>
                 </a>
 
-                
+
               </div>
             </div>
             <!-- single portfolio end -->
@@ -660,14 +689,15 @@
                         class="portfolio--title text-[18px] lg:text-[24px] font-heebo transition-all duration-300 translate-y-3">
                         Promotional Email</h3>
                       <span
-                        class="portfolio--sub-title text-[17px] 2xs:hidden transition-all duration-500 translate-y-3">Xfinity Replica Email</span>
+                        class="portfolio--sub-title text-[17px] 2xs:hidden transition-all duration-500 translate-y-3">Xfinity
+                        Replica Email</span>
                     </div>
                   </span>
                   <div class="w-full portfolio__image--card">
                     <img class="w-full transition duration-300" src="./assets/images/np-xfinity.png" alt="">
                   </div>
                 </a>
-                
+
               </div>
             </div>
             <!-- single portfolio end -->
@@ -694,7 +724,8 @@
                         class="portfolio--title text-[18px] lg:text-[24px] font-heebo transition-all duration-300 translate-y-3">
                         BuiltDigital Landing Page</h3>
                       <span
-                        class="portfolio--sub-title text-[17px] 2xs:hidden transition-all duration-500 translate-y-3">Created with HTML and CSS. Connected to ConvertKit to capture and send emails</span>
+                        class="portfolio--sub-title text-[17px] 2xs:hidden transition-all duration-500 translate-y-3">Created
+                        with HTML and CSS. Connected to ConvertKit to capture and send emails</span>
                     </div>
                   </span>
                   <div class="w-full portfolio__image--card">
@@ -702,7 +733,7 @@
                   </div>
                 </a>
 
-                
+
               </div>
             </div>
             <!-- single portfolio end -->
@@ -729,7 +760,8 @@
                         class="portfolio--title text-[18px] lg:text-[24px] font-heebo transition-all duration-300 translate-y-3">
                         Shopify Store</h3>
                       <span
-                        class="portfolio--sub-title text-[17px] 2xs:hidden transition-all duration-500 translate-y-3">Password: dahgee</span>
+                        class="portfolio--sub-title text-[17px] 2xs:hidden transition-all duration-500 translate-y-3">Password:
+                        dahgee</span>
                     </div>
                   </span>
                   <div class="w-full portfolio__image--card">
@@ -737,7 +769,7 @@
                   </div>
                 </a>
 
-                
+
               </div>
             </div>
             <!-- single portfolio end -->
@@ -764,23 +796,24 @@
                         class="portfolio--title text-[18px] lg:text-[24px] font-heebo transition-all duration-300 translate-y-3">
                         Good Food Blog</h3>
                       <span
-                        class="portfolio--sub-title text-[17px] 2xs:hidden transition-all duration-500 translate-y-3">Blog site created with Wordpress </span>
+                        class="portfolio--sub-title text-[17px] 2xs:hidden transition-all duration-500 translate-y-3">Blog
+                        site created with Wordpress </span>
                     </div>
                   </span>
                   <div class="w-full portfolio__image--card">
                     <img class="w-full transition duration-300" src="./assets/images/np-wordpress.png" alt="">
                   </div>
                 </a>
-                
+
               </div>
             </div>
             <!-- single portfolio end -->
 
-            
 
-            
 
-            
+
+
+
           </div>
         </div>
         <!-- Filter portfolio end -->
@@ -790,9 +823,9 @@
     <!-- Portfolio section end -->
 
 
-    
 
-    
+
+
   </main>
   <!-- Main wrapper end -->
 
@@ -804,7 +837,7 @@
       <div class="grid grid-cols-1 only-md:grid-cols-2 lg:grid-cols-2">
         <div class="flex">
           <p class="flex items-center flex-wrap sm:justify-center dark:text-slate-200">Derrion Hall © 2023<span
-              class="px-[3px] text-paragraph dark:text-white">           
+              class="px-[3px] text-paragraph dark:text-white">
           </p>
         </div>
         <div class="flex items-center justify-end gap-8 sm:justify-center sm:mt-[15px]">
