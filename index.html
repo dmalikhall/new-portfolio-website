@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Derrion Hall Portfolio Website</title>
+
+  <link rel="shortcut icon" type="image/x-icon" href="./assets/images/favicon.ico">
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Rubik:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap"
+    rel="stylesheet">
+
+  <!-- Plugins css -->
+  <link rel="stylesheet" href="./assets/css/mobilemenu.css" />
+  <!-- <link rel="stylesheet" href="./assets/css/glightbox.min.css" /> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <!-- Tailwind css -->
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+
+
+  <script>
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    if (localStorage.getItem("theme-color") === "dark" || (!("theme-color" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+      document.documentElement.classList.add("dark");
+      document.getElementById("light__to--dark")?.classList.add("dark--version");
+    }
+    if (localStorage.getItem("theme-color") === "light") {
+      document.documentElement.classList.remove("dark");
+      document.getElementById("light__to--dark")?.classList.remove("dark--version");
+    } 
+  </script>
+</head>
+
+<body class="font-rubik dark:bg-dark_primary_bg">
+
+  <!-- Preloader start -->
+  <div id="preloader">
+    <div class="loader--border"></div>
+  </div>
+  <!-- Preloader end -->
+
+  <!-- Dark and light button start -->
+  <div class="fixed ltr:right-0 rtl:left-0 top-[50%] translate-y-[-50%] z-50">
+    <button
+      class="bg-accent1 w-[50px] h-[50px] text-white flex justify-center items-center rounded-lg ltr:rounded-tr-none ltr:rounded-br-none rtl:rounded-tl-none rtl:rounded-bl-none"
+      id="light__to--dark">
+      <svg xmlns="http://www.w3.org/2000/svg" class="dark--mode__icon ionicon max-w-[25px] fill-white"
+        viewBox="0 0 512 512">
+        <title>Moon</title>
+        <path
+          d="M264 480A232 232 0 0132 248c0-94 54-178.28 137.61-214.67a16 16 0 0121.06 21.06C181.07 76.43 176 104.66 176 136c0 110.28 89.72 200 200 200 31.34 0 59.57-5.07 81.61-14.67a16 16 0 0121.06 21.06C442.28 426 358 480 264 480z" />
+      </svg>
+
+      <svg xmlns="http://www.w3.org/2000/svg" class="light--mode__icon ionicon max-w-[25px] fill-white"
+        viewBox="0 0 512 512">
+        <title>Sunny</title>
+        <path
+          d="M256 118a22 22 0 01-22-22V48a22 22 0 0144 0v48a22 22 0 01-22 22zM256 486a22 22 0 01-22-22v-48a22 22 0 0144 0v48a22 22 0 01-22 22zM369.14 164.86a22 22 0 01-15.56-37.55l33.94-33.94a22 22 0 0131.11 31.11l-33.94 33.94a21.93 21.93 0 01-15.55 6.44zM108.92 425.08a22 22 0 01-15.55-37.56l33.94-33.94a22 22 0 1131.11 31.11l-33.94 33.94a21.94 21.94 0 01-15.56 6.45zM464 278h-48a22 22 0 010-44h48a22 22 0 010 44zM96 278H48a22 22 0 010-44h48a22 22 0 010 44zM403.08 425.08a21.94 21.94 0 01-15.56-6.45l-33.94-33.94a22 22 0 0131.11-31.11l33.94 33.94a22 22 0 01-15.55 37.56zM142.86 164.86a21.89 21.89 0 01-15.55-6.44l-33.94-33.94a22 22 0 0131.11-31.11l33.94 33.94a22 22 0 01-15.56 37.55zM256 358a102 102 0 11102-102 102.12 102.12 0 01-102 102z" />
+      </svg>
+    </button>
+
+  </div>
+  <!-- Dark and light button end -->
+
+  <!-- Header area start -->
+  <header class="absolute w-full left-0 top-0">
+    <div class="header__sticky py-5">
+      <div class="container mx-auto">
+        <div class="flex justify-between items-center">
+          <div class="logo">
+            <a href="./index.html">
+              <h3 class="hidden dark:block" style="color:#ffffff">DerrionCodes</h3>
+              <h3 class="dark:hidden">DerrionCodes</h3>
+            </a>
+          </div>
+          <div class="flex items-center md:hidden">
+            <nav>
+              <ul class="flex items-center">
+                <li>
+                  <a href="#home"
+                    class="text-[17px] xl:text-[19px] text-primary dark:text-white font-medium hover:text-accent1 dark:hover:text-accent1 transition duration-300 relative after:absolute after:content-[''] after:h-[2px] after:w-0 after:bottom-[3px] ltr:after:left-0 rtl:after:right-0 after:transition-[.5s] after:bg-accent1 py-[8px] hover:after:w-full">Home</a>
+                </li>
+                <li>
+                  <a href="#about"
+                    class="text-[17px] xl:text-[19px] text-primary dark:text-white font-medium hover:text-accent1 dark:hover:text-accent1 transition duration-300 ltr:ml-[26px] ltr:xl:ml-[44px] rtl:mr-[26px] rtl:xl:mr-[44px] relative after:absolute after:content-[''] after:h-[2px] after:w-0 after:bottom-[3px] ltr:after:left-0 rtl:after:right-0 after:transition-[.5s] after:bg-accent1 py-[8px] hover:after:w-full">About</a>
+                </li>
+                </li>
+                <li>
+                  <a href="#skills"
+                    class="text-[17px] xl:text-[19px] text-primary dark:text-white font-medium hover:text-accent1 dark:hover:text-accent1 transition duration-300 ltr:ml-[26px] ltr:xl:ml-[44px] rtl:mr-[26px] rtl:xl:mr-[44px] relative after:absolute after:content-[''] after:h-[2px] after:w-0 after:bottom-[3px] ltr:after:left-0 rtl:after:right-0 after:transition-[.5s] after:bg-accent1 py-[8px] hover:after:w-full">Skills</a>
+                </li>
+                <li>
+                  <a href="#portfolio"
+                    class="text-[17px] xl:text-[19px] text-primary dark:text-white font-medium hover:text-accent1 dark:hover:text-accent1 transition duration-300 ltr:ml-[26px] ltr:xl:ml-[44px] rtl:mr-[26px] rtl:xl:mr-[44px] relative after:absolute after:content-[''] after:h-[2px] after:w-0 after:bottom-[3px] ltr:after:left-0 rtl:after:right-0 after:transition-[.5s] after:bg-accent1 py-[8px] hover:after:w-full">Portfolio</a>
+                </li>
+                
+              </ul>
+            </nav>
+          </div>
+          <div class="lg:hidden">
+            <button class="offcanvas__header--menu__open--btn text-primary dark:text-white " data-offcanvas>
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-menu">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Start Offcanvas header menu -->
+      <div class="offcanvas__header lg:hidden dark:bg-gray-800">
+        <div class="offcanvas__inner">
+          <div class="offcanvas__logo">
+            <a class="offcanvas__logo_link" href="index.html">
+              <h3 class="hidden dark:block" style="color:#ffffff">DerrionCodes</h3>
+              <h3 class="dark:hidden">DerrionCodes</h3>
+            </a>
+            <button class="offcanvas__close--btn dark:text-white" data-offcanvas>close</button>
+          </div>
+          <nav class="offcanvas__menu">
+            <ul class="offcanvas__menu_ul">
+              <li class="offcanvas__menu_li">
+                <a class="offcanvas__menu_item dark:text-white" href="#home">Home</a>
+              </li>
+              <li class="offcanvas__menu_li"><a class="offcanvas__menu_item dark:text-white" href="#about">About</a>
+              </li>
+              <li class="offcanvas__menu_li"><a class="offcanvas__menu_item dark:text-white"
+                  href="#skills">Skills</a></li>
+              <li class="offcanvas__menu_li"><a class="offcanvas__menu_item dark:text-white"
+                  href="#portfolio">Portfolio</a></li>
+              
+            </ul>
+          </nav>
+
+        </div>
+      </div>
+      <!-- End Offcanvas header menu -->
+    </div>
+
+
+  </header>
+  <!-- Header area end -->
+
+  <!-- Main wrapper start -->
+  <main>
+    <!-- Hero section start -->
+    <section
+      class="bg-cover bg-no-repeat bg-center sm:h-full only-md:h-screen lg:min-h-screen flex justify-center items-center overflow-hidden bg-[url('../images/hero-bg-img.png')] bg-[#DAEEF1] dark:bg-[url('../images/hero-bg-img-dark.png')] dark:bg-dark_primary_bg dark:border-b dark:border-dark_accent1"
+      id="home">
+      <div
+        class="container mx-auto flex sm:flex-col items-center justify-center lg:mt-[40px] only-md:mt-[40px] sm:pt-[100px] sm:pb-[70px]">
+        <div class="lg:max-w-[40%] sm:max-w-[60%] xs:max-w-[85%] only-md:max-w-[40%] flex justify-end">
+          <div class="relative only-xl:max-w-[70%]">
+            <img class="hidden dark:block" src="./assets/images/np-hero-image.webp" alt="">
+            <img class="dark:hidden" src="./assets/images/np-hero-image.webp" alt="">
+            <span
+              class="absolute top-[100px] lg:top-[210px] right-[-20px] only-md:right-[-10px] only-xl:max-w-[65px] lg:max-w-[80px] xl:max-w-[105px] sm:max-w-[50px] only-md:max-w-[70px] animateUpDown"><img
+                src="./assets/images/wordpress-logo.png" alt=""></span>
+            <span
+              class="absolute top-[80px] left-[-40px] md:left-[-10px] only-xl:max-w-[65px] lg:max-w-[80px] xl:max-w-[105px] sm:max-w-[50px] only-md:max-w-[70px] animateUpDown"><img
+                src="./assets/images/mailchimp.png" alt=""></span>
+
+          </div>
+        </div>
+        <div
+          class="ltr:xl:pl-[95px] ltr:lg:pl-[50px] ltr:only-md:pl-[40px] rtl:xl:pr-[95px] rtl:lg:pr-[50px] rtl:only-md:pr-[40px] flex-grow sm:mt-[30px] sm:text-center">
+          <span class="text-accent1 text-[24px] font-semibold italic pb-[5px]">HELLO I'M</span>
+          <h2
+            class="lg:text-[60px] only-md:text-[40px] sm:text-[28px] font-bold font-heebo text-heading dark:text-white">
+            Derrion Hall! </h2>
+          <h3 class="font-heebo font-normal text-primary dark:text-white">Web Developer focused on Email Development and
+            Web Content Management </h3>
+        </div>
+      </div>
+    </section>
+    <!-- Hero section end -->
+
+    <!-- Services section start -->
+    <section class="lg:py-[100px] md:py-[70px]" id="skills">
+      <div class="container mx-auto">
+        <!-- Section title start -->
+        <div class="flex justify-between items-center gap-[20px] lg:gap-[30px] mb-[55px] md:flex-wrap md:text-center">
+          <div class="max-w-full lg:max-w-[580px]  w-full">
+            <span class="text-accent1 text-[20px] lg:text-[24px] font-medium mb-[10px] lg:mb-[5px]">MY SKILLS</span>
+            <h2
+              class="text:[28px] lg:text-[48px] font-bold font-heebo leading-[36x] lg:leading-[58px] text-[#000248] dark:text-white">
+              What can I do for you</h2>
+          </div>
+        </div>
+        <!-- Section title end -->
+
+        <!-- Services list start -->
+        <div class="grid gap-[30px] lg:grid-cols-3 grid-cols-1 only-md:grid-cols-2">
+
+          <!-- Single service start -->
+          <div
+            class="shadow-[0_0_50px_0_rgba(196,206,213,0.2)] hover:shadow-[0_0_150px_0_rgba(196,206,213,0.7)]  dark:shadow-[0_0_20px_0_rgba(0,0,0,0.1)] dark:hover:shadow-[0_0_50px_0_rgba(0,0,0,0.2)] hover:translate-y-[-10px] transition duration-500">
+            <div class="overflow-hidden px-[30px] xl:px-[40px] lg:pt-[50px] md:pt-[40px] pb-[40px] ">
+              <span
+                class="bg-[#48CDA0] text-white w-[70px] h-[70px] lg:w-[93px] lg:h-[93px] flex items-center justify-center rounded-full service-shape before:bg-[#79DAB9] before:opacity-[0.26]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="feather feather-file-text">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+
+              </span>
+              <h3
+                class="text-primary dark:text-white text-[20px] xl:text-[25px] font-bold font-heebo mt-[20px] mb-[15px]">
+                HTML</h3>
+              <div>
+                <p href="#"
+                  class="link-button text-[#48CDA0] before:bg-[#48CDA0] mt-[15px] hover:text-[#333] dark:hover:text-white">
+                  Creating
+                  HTML documents</p>
+              </div>
+            </div>
+          </div>
+          <!-- Single service end -->
+
+          <!-- Single service start -->
+          <div
+            class="shadow-[0_0_50px_0_rgba(196,206,213,0.2)] hover:shadow-[0_0_150px_0_rgba(196,206,213,0.7)]  dark:shadow-[0_0_20px_0_rgba(0,0,0,0.1)] dark:hover:shadow-[0_0_50px_0_rgba(0,0,0,0.2)] hover:translate-y-[-10px] transition duration-500">
+            <div class="overflow-hidden px-[30px] xl:px-[40px] lg:pt-[50px] md:pt-[40px] pb-[40px] ">
+              <span
+                class="bg-[#ED5F38] text-white w-[70px] h-[70px] lg:w-[93px] lg:h-[93px] flex items-center justify-center rounded-full service-shape before:bg-[#ED5F38] before:opacity-[0.16]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="feather feather-life-buoy">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <circle cx="12" cy="12" r="4"></circle>
+                  <line x1="4.93" y1="4.93" x2="9.17" y2="9.17"></line>
+                  <line x1="14.83" y1="14.83" x2="19.07" y2="19.07"></line>
+                  <line x1="14.83" y1="9.17" x2="19.07" y2="4.93"></line>
+                  <line x1="14.83" y1="9.17" x2="18.36" y2="5.64"></line>
+                  <line x1="4.93" y1="19.07" x2="9.17" y2="14.83"></line>
+                </svg>
+
+              </span>
+              <h3
+                class="text-primary dark:text-white text-[20px] xl:text-[25px] font-bold font-heebo mt-[20px] mb-[15px]">
+                CSS</h3>
+              <div>
+                <p href="#"
+                  class="link-button text-[#ED5F38] before:bg-[#ED5F38] mt-[15px] hover:text-[#333] dark:hover:text-white">
+                  Responsive Design</p>
+              </div>
+              <div>
+                <p href="#"
+                  class="link-button text-[#ED5F38] before:bg-[#ED5F38] mt-[15px] hover:text-[#333] dark:hover:text-white">
+                  Media Queries</p>
+              </div>
+            </div>
+          </div>
+          <!-- Single service end -->
+
+
+
+          <!-- Single service start -->
+          <div
+            class="shadow-[0_0_50px_0_rgba(196,206,213,0.2)] hover:shadow-[0_0_150px_0_rgba(196,206,213,0.7)]  dark:shadow-[0_0_20px_0_rgba(0,0,0,0.1)] dark:hover:shadow-[0_0_50px_0_rgba(0,0,0,0.2)] hover:translate-y-[-10px] transition duration-500">
+            <div class="overflow-hidden px-[30px] xl:px-[40px] lg:pt-[50px] md:pt-[40px] pb-[40px] ">
+              <span
+                class="bg-[#E6BC13] text-white w-[70px] h-[70px] lg:w-[93px] lg:h-[93px] flex items-center justify-center rounded-full service-shape before:bg-[#E6BC13] before:opacity-[0.22]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+              </span>
+              <h3
+                class="text-primary dark:text-white text-[20px] xl:text-[25px] font-bold font-heebo mt-[20px] mb-[15px]">
+                Javascript</h3>
+              <div>
+                <p href="#"
+                  class="link-button text-[#E6BC13] before:bg-[#E6BC13] mt-[15px] hover:text-[#333] dark:hover:text-white">
+                  Functions</p>
+              </div>
+              <div>
+                <p href="#"
+                  class="link-button text-[#E6BC13] before:bg-[#E6BC13] mt-[15px] hover:text-[#333] dark:hover:text-white">
+                  Object Oriented Programming</p>
+              </div>
+              <div>
+                <p href="#"
+                  class="link-button text-[#E6BC13] before:bg-[#E6BC13] mt-[15px] hover:text-[#333] dark:hover:text-white">
+                  Fetching API's</p>
+              </div>
+            </div>
+          </div>
+          <!-- Single service end -->
+
+
+
+          <!-- Single service start -->
+          <div
+            class="shadow-[0_0_50px_0_rgba(196,206,213,0.2)] hover:shadow-[0_0_150px_0_rgba(196,206,213,0.7)]  dark:shadow-[0_0_20px_0_rgba(0,0,0,0.1)] dark:hover:shadow-[0_0_50px_0_rgba(0,0,0,0.2)] hover:translate-y-[-10px] transition duration-500">
+            <div class="overflow-hidden px-[30px] xl:px-[40px] lg:pt-[50px] md:pt-[40px] pb-[40px] ">
+              <span
+                class="bg-[#ED38D1] text-white w-[70px] h-[70px] lg:w-[93px] lg:h-[93px] flex items-center justify-center rounded-full service-shape before:bg-[#ED38D1] before:opacity-[0.16]">
+                <svg width="40" height="40" stroke="currentColor" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 384 512">
+                  <path
+                    d="M272 384c9.6-31.9 29.5-59.1 49.2-86.2l0 0c5.2-7.1 10.4-14.2 15.4-21.4c19.8-28.5 31.4-63 31.4-100.3C368 78.8 289.2 0 192 0S16 78.8 16 176c0 37.3 11.6 71.9 31.4 100.3c5 7.2 10.2 14.3 15.4 21.4l0 0c19.8 27.1 39.7 54.4 49.2 86.2H272zM192 512c44.2 0 80-35.8 80-80V416H112v16c0 44.2 35.8 80 80 80zM112 176c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-61.9 50.1-112 112-112c8.8 0 16 7.2 16 16s-7.2 16-16 16c-44.2 0-80 35.8-80 80z" />
+                </svg>
+              </span>
+              <h3
+                class="text-primary dark:text-white text-[20px] xl:text-[25px] font-bold font-heebo mt-[20px] mb-[15px]">
+                Design Softwares</h3>
+              <div>
+                <p href="#"
+                  class="link-button text-[#ED38D1] before:bg-[#ED38D1] mt-[15px] hover:text-[#333] dark:hover:text-white">
+                  Adobe Photoshop</p>
+
+              </div>
+              <div>
+                <p href="#"
+                  class="link-button text-[#ED38D1] before:bg-[#ED38D1] mt-[15px] hover:text-[#333] dark:hover:text-white">
+                  Sketch</p>
+
+              </div>
+            </div>
+          </div>
+          <!-- Single service end -->
+
+          <!-- Single service start -->
+          <div
+            class="shadow-[0_0_50px_0_rgba(196,206,213,0.2)] hover:shadow-[0_0_150px_0_rgba(196,206,213,0.7)]  dark:shadow-[0_0_20px_0_rgba(0,0,0,0.1)] dark:hover:shadow-[0_0_50px_0_rgba(0,0,0,0.2)] hover:translate-y-[-10px] transition duration-500">
+            <div class="overflow-hidden px-[30px] xl:px-[40px] lg:pt-[50px] md:pt-[40px] pb-[40px] ">
+              <span
+                class="bg-[#48CDA0] text-white w-[70px] h-[70px] lg:w-[93px] lg:h-[93px] flex items-center justify-center rounded-full service-shape before:bg-[#79DAB9] before:opacity-[0.26]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="feather feather-file-text">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+
+              </span>
+              <h3
+                class="text-primary dark:text-white text-[20px] xl:text-[25px] font-bold font-heebo mt-[20px] mb-[15px]">
+                Testing Emails</h3>
+              <div>
+                <p href="#"
+                  class="link-button text-[#48CDA0] before:bg-[#48CDA0] mt-[15px] hover:text-[#333] dark:hover:text-white">
+                  Email On Acid</p>
+              </div>
+              <div>
+                <p href="#"
+                  class="link-button text-[#48CDA0] before:bg-[#48CDA0] mt-[15px] hover:text-[#333] dark:hover:text-white">
+                  Litmus</p>
+              </div>
+
+            </div>
+          </div>
+          <!-- Single service end -->
+          <!-- Single service start -->
+          <div
+            class="shadow-[0_0_50px_0_rgba(196,206,213,0.2)] hover:shadow-[0_0_150px_0_rgba(196,206,213,0.7)]  dark:shadow-[0_0_20px_0_rgba(0,0,0,0.1)] dark:hover:shadow-[0_0_50px_0_rgba(0,0,0,0.2)] hover:translate-y-[-10px] transition duration-500">
+            <div class="overflow-hidden px-[30px] xl:px-[40px] lg:pt-[50px] md:pt-[40px] pb-[40px] ">
+              <span
+                class="bg-[#ED5F38] text-white w-[70px] h-[70px] lg:w-[93px] lg:h-[93px] flex items-center justify-center rounded-full service-shape before:bg-[#ED5F38] before:opacity-[0.16]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="feather feather-life-buoy">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <circle cx="12" cy="12" r="4"></circle>
+                  <line x1="4.93" y1="4.93" x2="9.17" y2="9.17"></line>
+                  <line x1="14.83" y1="14.83" x2="19.07" y2="19.07"></line>
+                  <line x1="14.83" y1="9.17" x2="19.07" y2="4.93"></line>
+                  <line x1="14.83" y1="9.17" x2="18.36" y2="5.64"></line>
+                  <line x1="4.93" y1="19.07" x2="9.17" y2="14.83"></line>
+                </svg>
+
+              </span>
+              <h3
+                class="text-primary dark:text-white text-[20px] xl:text-[25px] font-bold font-heebo mt-[20px] mb-[15px]">
+                Email Campaigns</h3>
+              <div>
+                <p href="#"
+                  class="link-button text-[#ED5F38] before:bg-[#ED5F38] mt-[15px] hover:text-[#333] dark:hover:text-white">
+                  MailChimp</p>
+              </div>
+              <div>
+                <p href="#"
+                  class="link-button text-[#ED5F38] before:bg-[#ED5F38] mt-[15px] hover:text-[#333] dark:hover:text-white">
+                  ConvertKit</p>
+                <p href="#"
+                  class="link-button text-[#ED5F38] before:bg-[#ED5F38] mt-[15px] hover:text-[#333] dark:hover:text-white">
+                  Automations & Sequences</p>
+              </div>
+            </div>
+          </div>
+          <!-- Single service end -->
+          <!-- Single service start -->
+          <div
+            class="shadow-[0_0_50px_0_rgba(196,206,213,0.2)] hover:shadow-[0_0_150px_0_rgba(196,206,213,0.7)]  dark:shadow-[0_0_20px_0_rgba(0,0,0,0.1)] dark:hover:shadow-[0_0_50px_0_rgba(0,0,0,0.2)] hover:translate-y-[-10px] transition duration-500">
+            <div class="overflow-hidden px-[30px] xl:px-[40px] lg:pt-[50px] md:pt-[40px] pb-[40px] ">
+              <span
+                class="bg-[#E6BC13] text-white w-[70px] h-[70px] lg:w-[93px] lg:h-[93px] flex items-center justify-center rounded-full service-shape before:bg-[#E6BC13] before:opacity-[0.22]">
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+              </span>
+              <h3
+                class="text-primary dark:text-white text-[20px] xl:text-[25px] font-bold font-heebo mt-[20px] mb-[15px]">
+                Content Management Systems</h3>
+              <div>
+                <p href="#"
+                  class="link-button text-[#E6BC13] before:bg-[#E6BC13] mt-[15px] hover:text-[#333] dark:hover:text-white">
+                  Wordpress</p>
+              </div>
+              <div>
+                <p href="#"
+                  class="link-button text-[#E6BC13] before:bg-[#E6BC13] mt-[15px] hover:text-[#333] dark:hover:text-white">
+                  Shopify</p>
+              </div>
+              <div>
+                <p href="#"
+                  class="link-button text-[#E6BC13] before:bg-[#E6BC13] mt-[15px] hover:text-[#333] dark:hover:text-white">
+                  Hubspot</p>
+              </div>
+              <div>
+                <p href="#"
+                  class="link-button text-[#E6BC13] before:bg-[#E6BC13] mt-[15px] hover:text-[#333] dark:hover:text-white">
+                  Contentful</p>
+              </div>
+
+            </div>
+          </div>
+          <!-- Single service end -->
+
+          <!-- Single service start -->
+          <div
+            class="shadow-[0_0_50px_0_rgba(196,206,213,0.2)] hover:shadow-[0_0_150px_0_rgba(196,206,213,0.7)]  dark:shadow-[0_0_20px_0_rgba(0,0,0,0.1)] dark:hover:shadow-[0_0_50px_0_rgba(0,0,0,0.2)] hover:translate-y-[-10px] transition duration-500">
+            <div class="overflow-hidden px-[30px] xl:px-[40px] lg:pt-[50px] md:pt-[40px] pb-[40px] ">
+              <span
+                class="bg-[#ED38D1] text-white w-[70px] h-[70px] lg:w-[93px] lg:h-[93px] flex items-center justify-center rounded-full service-shape before:bg-[#ED38D1] before:opacity-[0.16]">
+                <svg width="40" height="40" stroke="currentColor" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 384 512">
+                  <path
+                    d="M272 384c9.6-31.9 29.5-59.1 49.2-86.2l0 0c5.2-7.1 10.4-14.2 15.4-21.4c19.8-28.5 31.4-63 31.4-100.3C368 78.8 289.2 0 192 0S16 78.8 16 176c0 37.3 11.6 71.9 31.4 100.3c5 7.2 10.2 14.3 15.4 21.4l0 0c19.8 27.1 39.7 54.4 49.2 86.2H272zM192 512c44.2 0 80-35.8 80-80V416H112v16c0 44.2 35.8 80 80 80zM112 176c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-61.9 50.1-112 112-112c8.8 0 16 7.2 16 16s-7.2 16-16 16c-44.2 0-80 35.8-80 80z" />
+                </svg>
+              </span>
+              <h3
+                class="text-primary dark:text-white text-[20px] xl:text-[25px] font-bold font-heebo mt-[20px] mb-[15px]">
+                Google Anaylitics</h3>
+              
+              <div>
+                <p href="#"
+                  class="link-button text-[#ED38D1] before:bg-[#ED38D1] mt-[15px] hover:text-[#333] dark:hover:text-white">
+                  Traffic analysis</p>
+              </div>
+              <div>
+                <p href="#"
+                  class="link-button text-[#ED38D1] before:bg-[#ED38D1] mt-[15px] hover:text-[#333] dark:hover:text-white">
+                  Tracking Conversions</p>
+              </div>
+              
+
+            </div>
+          </div>
+          <!-- Single service end -->
+
+        </div>
+        <!-- Services list end -->
+
+      </div>
+    </section>
+    <!-- Services section end -->
+
+    <!-- About me section start -->
+    <section
+      class="bg-cover bg-no-repeat bg-center bg-[url('../images/about-me-bg.png')] bg-[#ECF1F6] dark:bg-dark_primary_bg dark:bg-none py-[70px] lg:py-[100px] dark:border-t dark:border-b dark:border-dark_accent1"
+      id="about">
+      <div class="container mx-auto">
+        <div class="flex justify-between sm:flex-wrap sm:flex-col-reverse">
+          <div class="w-full lg:max-w-[550px]">
+            <div>
+              <span class="text-accent1 text-[20px] lg:text-[24px] font-medium mb-[10px] lg:mb-[5px]">ABOUT ME</span>
+              <h2
+                class="text-[24px] only-md:text-[32px] lg:text-[48px] font-bold font-heebo leading-[36px] lg:leading-[58px] text-[#000248] dark:text-white ltr:lg:pr-[50px] rtl:lg:pl-[50px]">
+                My Story</h2>
+            </div>
+            <div class="mt-[30px]">
+              <h3 class="text-accent1 text-[20px] lg:text-[24px] font-medium ">Allow me to introduce myself:</h3>
+              
+              <ul class="flex justify-between flex-wrap mt-[18px]">
+                <li
+                  class="text-paragraph dark:text-slate-200 w-full xs:max-w-[100%]  max-w-[100%] ltr:pl-[18px] rtl:pr-[18px] my-[10px] relative before:absolute before:content-[''] before:bg-accent1 before:w-[6px] before:h-[6px] ltr:before:left-0 rtl:before:right-0 before:top-[8px] before:rounded-full after:absolute after::content-[''] after:w-4 after:h-4 after:border-2 after:border-accent1 ltr:after:left-[-5px] rtl:after:right-[-5px] after:top-[3px] after:border-solid after:rounded-full text-[17px]">
+                  Hi, my name is Derrion Hall. I'm an Email Specialist with the ability to take design mock-ups and turn them into HTML email documents. I can use email marketing campaign platforms to create tags, sequences, and automations to reach subscribers.</li>
+
+                <li
+                  class="text-paragraph dark:text-slate-200 w-full xs:max-w-[100%]  max-w-[100%] ltr:pl-[18px] rtl:pr-[18px] my-[10px] relative before:absolute before:content-[''] before:bg-accent1 before:w-[6px] before:h-[6px] ltr:before:left-0 rtl:before:right-0 before:top-[8px] before:rounded-full after:absolute after::content-[''] after:w-4 after:h-4 after:border-2 after:border-accent1 ltr:after:left-[-5px] rtl:after:right-[-5px] after:top-[3px] after:border-solid after:rounded-full text-[17px]">
+                  On a personal note, I enjoy fitness and reading. Always trying to find ways to be the best version of myself.</li>
+
+                <li
+                  class="text-paragraph dark:text-slate-200 w-full xs:max-w-[100%]  max-w-[100%] ltr:pl-[18px] rtl:pr-[18px] my-[10px] relative before:absolute before:content-[''] before:bg-accent1 before:w-[6px] before:h-[6px] ltr:before:left-0 rtl:before:right-0 before:top-[8px] before:rounded-full after:absolute after::content-[''] after:w-4 after:h-4 after:border-2 after:border-accent1 ltr:after:left-[-5px] rtl:after:right-[-5px] after:top-[3px] after:border-solid after:rounded-full text-[17px]">
+                  I look forward to building amazing relationships, bringing value, and giving my best each day. Lets connect and turn our dreams into reality!</li>
+
+
+              </ul>
+            </div>
+          </div>
+          <div class="sm:mb-[50px]">
+            <div class="relative">
+              <img class="relative z-10 sm:mx-auto" src="./assets/images/My project.jpg" alt="">
+              <span
+                class="absolute sm:w-[100px] sm:h-[100px] only-md:w-[150px] only-md:h-[150px] lg:w-[200px] lg:h-[200px] xl:w-[250px] xl:h-[250px] border-[8px] lg:border-[13px] border-accent1 rounded-full xs:bottom-[-25%] sm:bottom-[-12%] bottom-[-18%] ltr:sm:left-[3%] ltr:left-[-18%] rtl:sm:right-[3%] rtl:right-[-18%] animateUpDown"></span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- About me section end -->
+
+    
+
+
+    
+
+    
+
+
+    <!-- Portfolio section start -->
+    <section
+      class="bg-[#FFFFFF] dark:bg-dark_primary_bg pt-[70px] lg:pt-[100px] pb-[40px] lg:pb-[70px] dark:border-t dark:border-b dark:border-dark_accent1"
+      id="portfolio">
+      <div class="container mx-auto">
+        <div class="flex justify-between items-center gap-[20px] lg:gap-[30px] mb-[55px] md:flex-wrap md:text-center">
+          <div class="max-w-full lg:max-w-[580px]  w-full">
+            <span class="text-accent1 text-[20px] lg:text-[24px] font-medium mb-[10px] lg:mb-[5px]">PORTFOLIO</span>
+            <h2
+              class="text:[28px] lg:text-[48px] font-bold font-heebo leading-[36x] lg:leading-[58px] text-[#000248] dark:text-white">
+              Projects i've worked on
+            </h2>
+          </div>
+          <div class="md:grow">
+            <p class="text-[#636363] dark:text-slate-200 text-[17px] leading-[28px] lg:max-w-[472px] w-full">These projects are to show my ability to utilize HTML, CSS, and content management systems to bring beautiful designs to life.</p>
+          </div>
+        </div>
+
+        <!-- Filter portfolio start -->
+        <div class="isotope--filter">
+          <div class="button-group filters-button-group flex justify-center flex-wrap gap-[30px]">
+            <button
+              class="button is-checked text-primary dark:text-white text-[18px] capitalize font-medium hover:text-accent1 dark:hover:text-accent1 transition duration-300"
+              data-filter="*">Show All</button>
+            <button
+              class="button text-primary dark:text-white text-[18px] capitalize font-medium hover:text-accent1 dark:hover:text-accent1 transition duration-300"
+              data-filter=".emails">Emails</button>
+            <button
+              class="button text-primary dark:text-white text-[18px] capitalize font-medium hover:text-accent1 dark:hover:text-accent1 transition duration-300"
+              data-filter=".landing-pages">Landing Pages</button>
+            <button
+              class="button text-primary dark:text-white text-[18px] capitalize font-medium hover:text-accent1 dark:hover:text-accent1 transition duration-300"
+              data-filter=".cms">CMS</button>
+            
+          </div>
+          <div class="portfolio__grid flex mt-[50px] mx-[-15px]">
+            <!-- single portfolio start -->
+            <div class="element-item mb-[30px] w-[50%] lg:w-[33.33%]  px-[15px] emails portfolio__parent"
+              data-category="emails">
+              <div class="relative overflow-hidden">
+                <a href="https://my-amazon-email.netlify.app/" target="_blank" >
+                  <span
+                    class="absolute w-full h-full bg-accent1 left-0 top-0 opacity-0 transition duration-300 portfolio__overlay z-10">
+                    <div class="flex items-center justify-end flex-col text-center h-full text-white p-[20px]">
+                      <span
+                        class="portfolio--zoom flex items-center grow transition-all duration-300 translate-y-[-20px]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                          class="feather feather-maximize">
+                          <path
+                            d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3">
+                          </path>
+                        </svg>
+                      </span>
+                      <h3
+                        class="portfolio--title text-[18px] lg:text-[24px] font-heebo transition-all duration-300 translate-y-3">
+                        Transactional Email</h3>
+                      <span
+                        class="portfolio--sub-title text-[17px] 2xs:hidden transition-all duration-500 translate-y-3">Amazon Replica Email</span>
+                    </div>
+                  </span>
+                  <div class="w-full portfolio__image--card">
+                    <img class="w-full transition duration-300" src="./assets/images/np-amazon.png" alt="">
+                  </div>
+                </a>
+                
+              </div>
+            </div>
+            <!-- single portfolio end -->
+
+            <!-- single portfolio start -->
+            <div class="element-item mb-[30px] w-[50%] lg:w-[33.33%]  px-[15px] emails portfolio__parent"
+              data-category="emails">
+              <div class="relative overflow-hidden">
+                <a href="https://wilink-newsletter.netlify.app/" target="_blank">
+                  <span
+                    class="absolute w-full h-full bg-accent1 left-0 top-0 opacity-0 transition duration-300 portfolio__overlay z-10">
+                    <div class="flex items-center justify-end flex-col text-center h-full text-white p-[20px]">
+                      <span
+                        class="portfolio--zoom flex items-center grow transition-all duration-300 translate-y-[-20px]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                          class="feather feather-maximize">
+                          <path
+                            d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3">
+                          </path>
+                        </svg>
+                      </span>
+                      <h3
+                        class="portfolio--title text-[18px] lg:text-[24px] font-heebo transition-all duration-300 translate-y-3">
+                        Newsletter Email</h3>
+                      <span
+                        class="portfolio--sub-title text-[17px] 2xs:hidden transition-all duration-500 translate-y-3">Zoom Replica Email</span>
+                    </div>
+                  </span>
+                  <div class="w-full portfolio__image--card">
+                    <img class="w-full transition duration-300" src="./assets/images/np-zoom.png" alt="">
+                  </div>
+                </a>
+
+                
+              </div>
+            </div>
+            <!-- single portfolio end -->
+
+            <!-- single portfolio start -->
+            <div class="element-item mb-[30px] w-[50%] lg:w-[33.33%]  px-[15px] emails portfolio__parent"
+              data-category="emails">
+              <div class="relative overflow-hidden">
+                <a href="https://promo-email-project.netlify.app/" target="_blank">
+                  <span
+                    class="absolute w-full h-full bg-accent1 left-0 top-0 opacity-0 transition duration-300 portfolio__overlay z-10">
+                    <div class="flex items-center justify-end flex-col text-center h-full text-white p-[20px]">
+                      <span
+                        class="portfolio--zoom flex items-center grow transition-all duration-300 translate-y-[-20px]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                          class="feather feather-maximize">
+                          <path
+                            d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3">
+                          </path>
+                        </svg>
+                      </span>
+                      <h3
+                        class="portfolio--title text-[18px] lg:text-[24px] font-heebo transition-all duration-300 translate-y-3">
+                        Promotional Email</h3>
+                      <span
+                        class="portfolio--sub-title text-[17px] 2xs:hidden transition-all duration-500 translate-y-3">Xfinity Replica Email</span>
+                    </div>
+                  </span>
+                  <div class="w-full portfolio__image--card">
+                    <img class="w-full transition duration-300" src="./assets/images/np-xfinity.png" alt="">
+                  </div>
+                </a>
+                
+              </div>
+            </div>
+            <!-- single portfolio end -->
+
+            <!-- single portfolio start -->
+            <div class="element-item mb-[30px] w-[50%] lg:w-[33.33%]  px-[15px] landing-pages portfolio__parent"
+              data-category="landing-pages">
+              <div class="relative overflow-hidden">
+                <a href="https://builtdigital.netlify.app/" target="_blank">
+                  <span
+                    class="absolute w-full h-full bg-accent1 left-0 top-0 opacity-0 transition duration-300 portfolio__overlay z-10">
+                    <div class="flex items-center justify-end flex-col text-center h-full text-white p-[20px]">
+                      <span
+                        class="portfolio--zoom flex items-center grow transition-all duration-300 translate-y-[-20px]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                          class="feather feather-maximize">
+                          <path
+                            d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3">
+                          </path>
+                        </svg>
+                      </span>
+                      <h3
+                        class="portfolio--title text-[18px] lg:text-[24px] font-heebo transition-all duration-300 translate-y-3">
+                        BuiltDigital Landing Page</h3>
+                      <span
+                        class="portfolio--sub-title text-[17px] 2xs:hidden transition-all duration-500 translate-y-3">Created with HTML and CSS. Connected to ConvertKit to capture and send emails</span>
+                    </div>
+                  </span>
+                  <div class="w-full portfolio__image--card">
+                    <img class="w-full transition duration-300" src="./assets/images/np-landingpage.png" alt="">
+                  </div>
+                </a>
+
+                
+              </div>
+            </div>
+            <!-- single portfolio end -->
+
+            <!-- single portfolio start -->
+            <div class="element-item mb-[30px] w-[50%] lg:w-[33.33%]  px-[15px] cms portfolio__parent"
+              data-category="cms">
+              <div class="relative overflow-hidden">
+                <a href="https://cp17course.myshopify.com/password" target="_blank">
+                  <span
+                    class="absolute w-full h-full bg-accent1 left-0 top-0 opacity-0 transition duration-300 portfolio__overlay z-10">
+                    <div class="flex items-center justify-end flex-col text-center h-full text-white p-[20px]">
+                      <span
+                        class="portfolio--zoom flex items-center grow transition-all duration-300 translate-y-[-20px]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                          class="feather feather-maximize">
+                          <path
+                            d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3">
+                          </path>
+                        </svg>
+                      </span>
+                      <h3
+                        class="portfolio--title text-[18px] lg:text-[24px] font-heebo transition-all duration-300 translate-y-3">
+                        Shopify Store</h3>
+                      <span
+                        class="portfolio--sub-title text-[17px] 2xs:hidden transition-all duration-500 translate-y-3">Password: dahgee</span>
+                    </div>
+                  </span>
+                  <div class="w-full portfolio__image--card">
+                    <img class="w-full transition duration-300" src="./assets/images/np-shopify.png" alt="">
+                  </div>
+                </a>
+
+                
+              </div>
+            </div>
+            <!-- single portfolio end -->
+
+            <!-- single portfolio start -->
+            <div class="element-item mb-[30px] w-[50%] lg:w-[33.33%]  px-[15px] cms portfolio__parent"
+              data-category="cms">
+              <div class="relative overflow-hidden">
+                <a href="https://goodfoodsblog.com/" target="_blank">
+                  <span
+                    class="absolute w-full h-full bg-accent1 left-0 top-0 opacity-0 transition duration-300 portfolio__overlay z-10">
+                    <div class="flex items-center justify-end flex-col text-center h-full text-white p-[20px]">
+                      <span
+                        class="portfolio--zoom flex items-center grow transition-all duration-300 translate-y-[-20px]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                          class="feather feather-maximize">
+                          <path
+                            d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3">
+                          </path>
+                        </svg>
+                      </span>
+                      <h3
+                        class="portfolio--title text-[18px] lg:text-[24px] font-heebo transition-all duration-300 translate-y-3">
+                        Good Food Blog</h3>
+                      <span
+                        class="portfolio--sub-title text-[17px] 2xs:hidden transition-all duration-500 translate-y-3">Blog site created with Wordpress </span>
+                    </div>
+                  </span>
+                  <div class="w-full portfolio__image--card">
+                    <img class="w-full transition duration-300" src="./assets/images/np-wordpress.png" alt="">
+                  </div>
+                </a>
+                
+              </div>
+            </div>
+            <!-- single portfolio end -->
+
+            
+
+            
+
+            
+          </div>
+        </div>
+        <!-- Filter portfolio end -->
+
+      </div>
+    </section>
+    <!-- Portfolio section end -->
+
+
+    
+
+    
+  </main>
+  <!-- Main wrapper end -->
+
+
+  <!-- Footer start -->
+  <footer
+    class="py-[50px] bg-cover bg-no-repeat bg-center bg-[url('../images/footer-bg.png')] bg-[#EFF3F7] dark:bg-[url('../images/footer-bg-dark.png')] dark:bg-dark_primary_bg dark:border-t dark:border-dark_accent1">
+    <div class="container mx-auto">
+      <div class="grid grid-cols-1 only-md:grid-cols-2 lg:grid-cols-2">
+        <div class="flex">
+          <p class="flex items-center flex-wrap sm:justify-center dark:text-slate-200">Derrion Hall © 2023<span
+              class="px-[3px] text-paragraph dark:text-white">           
+          </p>
+        </div>
+        <div class="flex items-center justify-end gap-8 sm:justify-center sm:mt-[15px]">
+          <a href="#"
+            class="text-paragraph dark:text-slate-200 hover:text-accent1 font-medium text-[20px] sm:text-[16px]">Terms &
+            Condition</a>
+          <a href="#"
+            class="text-paragraph dark:text-slate-200 hover:text-accent1 font-medium text-[20px] sm:text-[16px]">
+            Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+  <!-- Footer end -->
+
+  <!-- Back to top start -->
+  <button id="scroll__top"
+    class="fixed bottom-12 ltr:right-5 rtl:left-5 z-50 bg-accent1 text-white shadow-[0_2px_22px_rgba(0,0,0,0.16)] cursor-pointer translate-y-12 opacity-0 invisible transition-all duration-300 leading-[1] w-11 h-11 rounded-full border-none flex items-center justify-center hover:bg-primary dark:hover:bg-dark_accent1">
+    <svg xmlns="http://www.w3.org/2000/svg" class="ionicon w-6 leading-[1]" viewBox="0 0 512 512">
+      <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="48"
+        d="M112 244l144-144 144 144M256 120v292" />
+    </svg>
+  </button>
+  <!-- Back to top end -->
+
+
+
+  <!-------- Plugins js ------>
+
+  <!-- Swiper js -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+  <!-- imagesloaded js -->
+  <script src="./assets/js/imagesloaded.pkgd.min.js" defer></script>
+
+  <!-- Isotope js -->
+  <script src="./assets/js/isotope.pkgd.min.js" defer></script>
+
+  <!-- Custom js -->
+  <script src="./assets/js/script.js" defer></script>
+</body>
+
+</html>
